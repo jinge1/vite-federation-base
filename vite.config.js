@@ -16,15 +16,15 @@ export default defineConfig({
       },
       shared: ['react'] // 用于在远程模块与本地模块之间共享第三方依赖
     })
-  ]
-  // build: {
-  //   target: 'es2020', // 针对非行内样式，需要构建规格为 es2020，否则样式会失效，控制台给出提示
-  //   minify: false,
-  //   cssCodeSplit: false,
-  //   rollupOptions: {
-  //     output: {
-  //       minifyInternalExports: false
-  //     }
-  //   }
-  // }
+  ],
+  build: {
+    target: 'esnext', // 针对非行内样式，需要构建规格为 es2020，否则样式会失效，控制台给出提示
+    minify: false,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        minifyInternalExports: false
+      }
+    }
+  }
 })
